@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience exceptional flavors in an elegant setting at RAMNAM restaurant. View our menu, make reservations, and get in touch with us.">
+    <meta name="author" content="Engr. Omanito">
+    <title>Menu - RAMNAM Restaurant</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 1s ease;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .background-slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .background-slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .background-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+            filter: blur(0px);
+        }
+
+        .background-image.active {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        .menu-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: transparent;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-panel .content {
+            flex: 1;
+        }
+
+        .dish {
+            display: none;
+        }
+
+        .dish img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .dish h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .dish-description {
+            font-size: 16px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .dish-price {
+            font-size: 18px;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #c0392b;
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .menu-content {
+            animation: slideInFromLeft 1s ease-in-out;
+           
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .menu-content h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            background-color: #e74c3c;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .menu-content p {
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+        }
+        .menu-panel {
+            color: black;
+        }
+        .navbar-toggler {
+            background-color: white; /* Change the background color to white */
+            border: none;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            padding: 0.5rem;
+            outline: none;
+            transition: transform 0.3s;
+        }
+        .navbar-toggler-icon {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: black; /* Change the background color to black */
+            margin: 5px auto;
+            transition: all 0.3s;
+        }
+        .navbar-nav {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="background-slideshow">
+        <img class="background-image active" src="tamnam.jpg" alt="Background 1">
+        <img class="background-image" src="karage.jpg" alt="Background 2">
+        <img class="background-image" src="gyoza.jpg" alt="Background 3">
+        <img class="background-image" src="shuyo.jpg" alt="Background 3">
+        <img class="background-image" src="tonkutso.jpg" alt="Background 3">
+        <img class="background-image" src="kare.jpg" alt="Background 3">
+        
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#">R A M N A M</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reservations.html">Reservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link contact-link" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Testimonials.html">Feedback</a>
+                </li>
+            </ul>
+            <form class="form-inline ml-lg-3">
+                <div class="input-group">
+                    <input id="searchInput" class="form-control" type="search" placeholder="Search for dishes..." aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success" type="button" onclick="searchDish()"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </nav>
+    <div class="menu-panel container">
+        <div class="row">
+            <div class="col-md-6 menu-content">
+                
+            <h2>R A M E N </h2>
+            <p>Explore our delectable range of dishes, <br>carefully crafted to tantalize your taste buds.</p>
+
+            </div>
+            <div class="col-md-6 dish-slideshow">
+               <div class="dish">
+                <img src="tamnam.jpg" alt="Dish 1">
+                <h2>TANTANMEN</h2>
+                <p class="dish-description">Pork bone broth mixed in with a nutly and spicy tare tepped with ground pork pork, bak choy and tamago.</p>
+                <div class="dish-price">₱350</div>
+                <button class="add-to-cart-button">Buy me</button>
+            </div>
+            <div class="dish">
+                <img src="karage.jpg" alt="Dish 2">
+                <h2>KARAAGE</h2>
+                <p class="dish-description">Boneless chicken is soy sauce, ginger and garlic coated in a flavour mixture and deep-fried. Crispy texture and savory flavor.</p>
+                <div class="dish-price">₱180</div>
+                <button class="add-to-cart-button">Buy me</button>
+            </div>
+            <div class="dish">
+                <img src="gyoza.jpg" alt="Dish 3">
+                <h2>GYOZA</h2>
+                <p class="dish-description">Japanese dumplings filled with meat and vegetables, made with a ground pork and cabbage fillings. Served with sauce made of a soy source, rice vinegar, and chilli oil.</p>
+                <div class="dish-price">₱129</div>
+                <button class="add-to-cart-button">Buy me</button>
+            </div>
+            <div class="dish">
+                <img src="shuyo.jpg" alt="Dish 3">
+                <h2>SHOYO MISO</h2>
+                <p class="dish-description">Miso Based Ramen combined with chashu sauce and served with sliced pork, green onions, nori and tamago. </p>
+                <div class="dish-price">₱330</div>
+                <button class="add-to-cart-button">Buy me</button>
+            </div>
+            <div class="dish">
+                <img src="tonkutso.jpg" alt="Dish 3">
+                <h2>TONKOTSU</h2>
+                <p class="dish-description">Pork bone broth with thin and firm noodles, served with cashu, green onions, bamboo shoots, nori, kikurage mushroom and tamago.</p>
+                <div class="dish-price">₱340</div>
+                <button class="add-to-cart-button">Buy me</button>
+            </div>
+            <div class="dish">
+                <img src="kare.jpg" alt="Dish 3">
+                <h2>KARE</h2>
+                <p class="dish-description">The "curry ramen", combined with vegetables broth. Thick, rich and hearty soup served with Chashu, green onion, and tamago.</p>
+                <div class="dish-price">₱330</div>
+                <button class="add-to-cart-button">Buy me</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer text-center py-3">
+        <p>&copy; 2020 RAMNAM - E L Y U </p>
+    </footer>
+    <script src="animation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchSwipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
+
+    <script>
+        let backgroundIndex = 0;
+        let dishIndex = 0;
+    
+        showBackgroundAndDishes();
+    
+        function showBackgroundAndDishes() {
+            const backgroundImages = document.getElementsByClassName("background-image");
+            const dishes = document.getElementsByClassName("dish");
+            document.body.style.opacity = 1;
+    
+            for (let i = 0; i < backgroundImages.length; i++) {
+                backgroundImages[i].classList.remove("active");
+            }
+            for (let i = 0; i < dishes.length; i++) {
+                dishes[i].style.display = "none";
+            }
+    
+            backgroundImages[backgroundIndex].classList.add("active");
+            dishes[dishIndex].style.display = "block";
+    
+            backgroundIndex = (backgroundIndex + 1) % backgroundImages.length;
+            dishIndex = (dishIndex + 1) % dishes.length;
+    
+            setTimeout(showBackgroundAndDishes, 5000);
+        }
+    
+        $(document).ready(function () {
+            $(".background-slideshow").swipe({
+                swipeLeft: function () {
+                    advanceSlides();
+                },
+                swipeRight: function () {
+                    retreatSlides();
+                },
+                threshold: 75,
+            });
+    
+            $(".dish-slideshow").swipe({
+                swipeLeft: function () {
+                    advanceDishes();
+                },
+                swipeRight: function () {
+                    retreatDishes();
+                },
+                threshold: 75,
+            });
+    
+            function advanceSlides() {
+                $(".background-image.active").removeClass("active").next().addClass("active");
+                backgroundIndex = (backgroundIndex + 1) % backgroundImages.length;
+            }
+    
+            function retreatSlides() {
+                $(".background-image.active").removeClass("active").prev().addClass("active");
+                backgroundIndex = (backgroundIndex - 1 + backgroundImages.length) % backgroundImages.length;
+            }
+    
+            function advanceDishes() {
+                $(".dish:visible").hide().next().show();
+                dishIndex = (dishIndex + 1) % dishes.length;
+            }
+    
+            function retreatDishes() {
+                $(".dish:visible").hide().prev().show();
+                dishIndex = (dishIndex - 1 + dishes.length) % dishes.length;
+            }
+        });
+    </script>
+    <script>
+        function searchDish() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const dishes = document.getElementsByClassName("dish");
+    
+            for (let i = 0; i < dishes.length; i++) {
+                const dishName = dishes[i].querySelector("h2").textContent.toLowerCase();
+                const dishDescription = dishes[i].querySelector(".dish-description").textContent.toLowerCase();
+    
+                if (dishName.includes(searchTerm) || dishDescription.includes(searchTerm)) {
+                    dishes[i].style.display = "block";
+                } else {
+                    dishes[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    
+    
+    
+    
+    
+</body>
+</html>

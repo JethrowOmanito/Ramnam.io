@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read what our satisfied customers have to say about their experience at RAMNAM restaurant.">
+    <meta name="author" content="Engr. Omanito">
+    <title>Reviews - RAMNAM Restaurant</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4A5568; /* Change this to your desired background color */
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar-toggler {
+            background-color: white; /* Change the background color to white */
+            border: none;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            padding: 0.5rem;
+            outline: none;
+            transition: transform 0.3s;
+        }
+        .navbar-toggler-icon {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: black; /* Change the background color to black */
+            margin: 5px auto;
+            transition: all 0.3s;
+        }
+        .navbar-nav {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4A5568;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        .testimonial-container {
+            display: flex;
+            flex-direction: column; /* Change to column layout for mobile */
+            align-items: center;
+            margin-bottom: -20px;
+        }
+        .testimonial {
+            background-color: #c83b50;
+            border-radius: 10px;
+            padding: 20px;
+            flex-basis: 100%;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color : black;
+        }
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .testimonial-author {
+                text-align: center; /* Center text on mobile */
+            }
+        }
+        .testimonial p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 16px;
+            text-align: center;
+        }
+    
+        /* Additional styles for smaller screens */
+        @media (max-width: 768px) {
+            .testimonial {
+                flex-basis: 100%; /* Take full width on smaller screens */
+            }
+            .testimonial-image {
+                margin-top: 20px; /* Increase margin for better spacing */
+            }
+        }
+        .testimonial-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#">R A M N A M</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reservations.html">Reservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="testimonials.html">Feedback</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class = "mn-4">R E V I E W S</h2>
+                <p class = "mb-5">Read what our satisfied customers have to say about their experience at RAMNAM.</p>
+            </div>
+        </div>
+        <div class="row testimonial-container">
+            <!-- Your testimonial divs here -->
+        </div>
+        <!-- Swiper container -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <p>Thank you! </p>
+                            <div class="testimonial-author text-center mt-2">Author:M******</div>
+                            <img src="ig1.jpg" alt="John Doe" class="testimonial-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <p>Thank you!!.</p>
+                            <div class="testimonial-author text-center mt-2">Author:D*****</div>
+                            <img src="ig2.jpg" alt="Jane Smith" class="testimonial-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <p>Arigatooo!</p>
+                            <div class="testimonial-author text-center mt-2">Author:A*****</div>
+                            <img src="ig4.jpg" alt="Jane Smith" class="testimonial-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <p>Arigatays!!</p>
+                            <div class="testimonial-author text-center mt-2">Author: N*****</div>
+                            <img src="ig5.jpg" alt="Jane Smith" class="testimonial-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <p>Maraming Salamat!.</p>
+                            <div class="testimonial-author text-center mt-2">Author:J********</div>
+                            <img src="ig6.jpg" alt="Jane Smith" class="testimonial-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <p>Thank you!.</p>
+                            <div class="testimonial-author text-center mt-2">Author:K*******</div>
+                            <img src="ig77.jpg" alt="Jane Smith" class="testimonial-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <p>Arigato.</p>
+                            <div class="testimonial-author text-center mt-2">Author:B*****</div>
+                            <img src="ig8.jpg" alt="Jane Smith" class="testimonial-image">
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Add more swiper-slide elements for each testimonial -->
+            </div>
+            <!-- Swiper pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Swiper navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2020 RAMNAM - E L Y U </p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: -500,
+                centeredSlides: true,
+                loop: true,
+                grabCursor: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            });
+            
+            // Adjust swiper container's height to match the tallest testimonial
+            var testimonials = document.querySelectorAll('.testimonial');
+            var tallestHeight = 0;
+            testimonials.forEach(function(testimonial) {
+                var height = testimonial.clientHeight;
+                if (height > tallestHeight) {
+                    tallestHeight = height;
+                }
+            });
+            document.querySelector('.swiper-slide').style.height = tallestHeight + 'px';
+            
+            swiper.on('resize', function() {
+                var swiperWrapper = document.querySelector('.swiper-wrapper');
+                var swiperSlide = document.querySelector('.swiper-slide-active');
+                var wrapperWidth = swiperWrapper.clientWidth;
+                var slideWidth = swiperSlide.clientWidth;
+                var offset = (wrapperWidth - slideWidth) / 2;
+                swiperWrapper.style.transform = 'translateX(' + offset + 'px)';
+            });
+        });
+    </script>
+    
+       
+    
+</body>
+</html>
